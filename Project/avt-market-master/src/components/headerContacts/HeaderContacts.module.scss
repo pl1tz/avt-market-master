@@ -1,0 +1,20 @@
+.header_contacts {
+    border-bottom: 1px solid var(--decoration-line-color);
+    display: flex;
+    font-size: 12px;
+    line-height: 18px;
+
+    &__item {
+        padding: 12px 8px;
+    }
+
+    &__item_phone {
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header_contacts {
+        display: none;
+    }
+}

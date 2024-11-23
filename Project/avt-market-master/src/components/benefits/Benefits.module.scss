@@ -1,0 +1,43 @@
+.benefits {
+    display: flex;
+    font-size: 12px;
+    gap: 16px;
+    justify-content: space-between;
+
+    &__item {
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        cursor: pointer;
+        flex-grow: 1;
+        flex-shrink: 0;
+        padding: 16px;
+        text-align: center;
+        transition: all ease var(--transition-time);
+    }
+}
+
+@media (hover: hover) {
+    .benefits__item:hover {
+        scale: 1.02;
+        text-shadow: 0.1px 0.1px 0.1px var(--main-color);
+    }
+}
+
+@media (max-width: 1300px) {
+    .benefits {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .benefits {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__item {
+            min-width: 25%;
+            text-align: center;
+            flex-grow: 1;
+        }
+    }
+}

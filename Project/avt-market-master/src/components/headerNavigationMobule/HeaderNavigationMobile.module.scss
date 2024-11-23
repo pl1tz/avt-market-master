@@ -1,0 +1,114 @@
+.header_navigation_mobile {
+    display: flex;
+
+    &__phone {
+        display: none;
+    }
+
+    &__heart_link {
+        position: relative;
+        padding: 10px;
+    }
+
+    &__count {
+        align-items: center;
+        background-color: var(--main-color);
+        border-radius: 50%;
+        color: var(--inverse-text-color);
+        display: flex;
+        font-size: 12px;
+        height: 18px;
+        justify-content: center;
+        position: absolute;
+        right: -5px;
+        top: 0px;
+        width: 18px;
+    }
+
+    &__count span {
+        position: relative;
+        left: 1px;
+    }
+}
+
+.hamburger {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    height: 56px;
+    justify-content: space-between;
+    outline: none;
+    padding: 19px 16px;
+    position: relative;
+    top: 1px;
+    width: 56px;
+
+    &__element {
+        background-color: var(--main-color);
+        border-radius: 8px;
+        height: 3px;
+        transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+        width: 100%;
+    }
+}
+
+.hamburger_active {
+    & span:nth-child(1) {
+        position: relative;
+        transform-origin: bottom;
+        transform: rotate(45deg) translate(3px, 6px);
+        top: 0.5px;
+    }
+
+    & span:nth-child(2) {
+        opacity: 0;
+    }
+
+    & span:nth-child(3) {
+        transform-origin: bottom;
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (hover: hover) {
+    .hamburger:hover span {
+        background-color: var(--hover-main-color);
+    }
+}
+
+@media (max-width: 1200px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .header_navigation_mobile {
+        align-items: center;
+        column-gap: 15px;
+
+        &__phone {
+            display: block;
+            height: max-content;
+        }
+    }
+
+    .heart {
+        position: relative;
+        top: 17px;
+    }
+}
+
+@media (max-width: 405px) {
+    .header_navigation_mobile {
+        column-gap: 0px;
+    }
+
+    .hamburger {
+        padding: 15px 9px;
+    }
+
+    .header_navigation_mobile__heart_link {
+        padding: 8px;
+    }
+}

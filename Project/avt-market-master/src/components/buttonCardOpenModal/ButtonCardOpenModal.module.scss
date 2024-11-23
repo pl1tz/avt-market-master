@@ -1,0 +1,27 @@
+.button_card_open_modal {
+    background-color: var(--main-color);
+    border-radius: 48px;
+    border: none;
+    color: var(--inverse-text-color);
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+    padding: 12px;
+    position: relative;
+    transition: all ease var(--transition-time);
+    z-index: 2;
+}
+
+@media (hover: hover) {
+    .button_card_open_modal:hover {
+        background-color: var(--hover-main-color);
+    }
+}
+
+@media (max-width: 450px) {
+    .button_card_open_modal {
+        font-size: 12px;
+        padding: 6px;
+    }
+}

@@ -1,0 +1,119 @@
+.modal_select {
+    align-items: center;
+    background-color: rgb(23, 23, 25, 0.9);
+    inset: 0;
+    opacity: 0;
+    padding: 10px;
+    position: fixed;
+    transition: all 0.7s;
+    z-index: -1;
+
+    &__inner {
+        background-color: var(--inverse-text-color);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        min-height: 100vh;
+        overflow-y: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateX(100%);
+        transition: all 0.7s;
+        width: 880px;
+    }
+
+    &__header {
+        padding: 32px 32px 24px;
+    }
+
+    &__title {
+        font-size: 32px;
+        line-height: 48px;
+    }
+
+    &__cross {
+        top: 20px;
+        right: 20px;
+    }
+
+    &__cross::after,
+    &__cross::before {
+        background-color: var(--main-color);
+    }
+
+    &__panel {
+        border-bottom: 1px solid var(--decorative-line-color);
+        border-top: 1px solid var(--decorative-line-color);
+        gap: 16px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 16px 32px;
+    }
+
+    &__label {
+        border-radius: 48px;
+        border: 1px solid var(--decorative-line-color);
+        cursor: pointer;
+        padding: 8px 16px;
+        transition: all var(--transition-time);
+        white-space: nowrap;
+    }
+
+    &__label:has(input:checked) {
+        background-color: var(--decorative-line-color);
+        border: 1px solid transparent;
+        cursor: auto;
+        text-shadow: 0.1px 0.1px 0.1px var(--main-text-color);
+    }
+
+    &__label input {
+        display: none;
+    }
+
+    &__label_disabled {
+        pointer-events: none;
+    }
+}
+
+.modal_select_active {
+    opacity: 1;
+    z-index: 200;
+}
+
+.modal_select_active .modal_select__inner {
+    transform: translateX(0%);
+}
+
+@media (hover: hover) {
+    .modal_select__label:hover {
+        background-color: var(--decorative-line-color);
+    }
+}
+
+@media (max-width: 1200px) {
+    .modal_select__inner {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal_select {
+        &__header {
+            padding: 45px 10px 24px;
+        }
+        &__panel {
+            grid-template-columns: 1fr 1fr;
+            padding: 10px;
+        }
+        &__list {
+            padding: 10px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .modal_select__panel {
+        font-size: 14px;
+    }
+}

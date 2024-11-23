@@ -1,0 +1,17 @@
+.error {
+    margin-top: 150px;
+
+    &__title {
+        font-size: 32px;
+        line-height: 48px;
+        margin-bottom: 20px;
+    }
+
+    &__link {
+        color: var(--main-color);
+        display: block;
+        margin-bottom: 40px;
+        margin-left: auto;
+        width: max-content;
+    }
+}

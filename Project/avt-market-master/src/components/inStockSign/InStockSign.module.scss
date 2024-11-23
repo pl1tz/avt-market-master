@@ -1,0 +1,15 @@
+.in_stock_sign {
+    align-items: center;
+    background-color: rgb(98 180 138);
+    border-radius: 16px;
+    color: var(--inverse-text-color);
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    line-height: 18px;
+    max-width: 100px;
+    padding: 0px 4px;
+    position: relative;
+    width: 100%;
+    z-index: 5;
+}

@@ -1,0 +1,33 @@
+.button_favorite {
+    background-color: #eeeff8;
+    border-radius: 50%;
+    border: none;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    z-index: 3;
+}
+
+.button_favorite > .heart_active {
+    & path {
+        fill: var(--main-color);
+        stroke: none;
+    }
+}
+
+.heart_link {
+    padding: 10px;
+}
+
+@media (hover: hover) {
+    .heart:hover {
+        scale: 1.01;
+    }
+}
+
+@media (max-width: 1200px) {
+    .heart {
+        position: relative;
+        top: 5px;
+    }
+}

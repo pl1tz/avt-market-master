@@ -1,0 +1,23 @@
+.credit_offers {
+    padding: 16px;
+    box-shadow: var(--box-shadow);
+    flex-grow: 1;
+    height: max-content;
+
+    &__title {
+        font-size: 28px;
+        margin-bottom: 36px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .credit_offers {
+        display: none;
+    }
+}

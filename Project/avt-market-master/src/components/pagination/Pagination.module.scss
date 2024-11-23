@@ -1,0 +1,29 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 0;
+    justify-content: center;
+}
+
+.page {
+    align-items: center;
+    background-color: transparent;
+    color: var(--light-text-color);
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    min-width: 40px;
+    transition: all var(--transition-time) ease;
+
+    &.active {
+        color: var(--main-color);
+    }
+}
+
+@media (hover: hover) {
+    .page:hover {
+        color: var(--main-color);
+    }
+}

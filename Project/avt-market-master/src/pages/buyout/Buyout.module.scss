@@ -1,0 +1,39 @@
+.buyout {
+    &__content {
+        display: flex;
+        gap: 24px;
+    }
+
+    &__form {
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 360px;
+        width: 100%;
+        padding: 16px;
+    }
+
+    &__description {
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        padding: 16px;
+        height: max-content;
+    }
+}
+
+@media (max-width: 768px) {
+    .buyout {
+        &__content {
+            flex-direction: column;
+        }
+
+        &__form {
+            max-width: 100%;
+        }
+    }
+}

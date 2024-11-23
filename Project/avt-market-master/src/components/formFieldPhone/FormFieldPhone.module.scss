@@ -1,0 +1,29 @@
+.label_phone {
+    cursor: pointer;
+
+    &__input {
+        background-color: transparent;
+        border-radius: 40px;
+        border: 1px solid var(--decorative-line-color);
+        color: var(--main-text-color);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        outline: none;
+        transition: border ease var(--transition-time);
+        text-align: left;
+        padding: 11px 16px;
+        position: relative;
+        width: 100%;
+    }
+
+    &__input::placeholder {
+        color: var(--light-text-color);
+    }
+}
+
+@media (hover: hover) {
+    .label_phone:hover .label_phone__input {
+        border: 1px solid var(--main-text-color);
+    }
+}

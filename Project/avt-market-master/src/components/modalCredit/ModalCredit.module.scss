@@ -1,0 +1,138 @@
+.modal_credit {
+    align-items: center;
+    background-color: rgb(23, 23, 25, 0.9);
+    inset: 0;
+    opacity: 0;
+    padding: 10px;
+    position: fixed;
+    transition: all 0.7s;
+    z-index: -1;
+
+    &__inner {
+        background-color: var(--inverse-text-color);
+        min-height: 100vh;
+        overflow-y: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateX(100%);
+        transition: all 0.7s;
+        height: 100vh;
+        width: 880px;
+    }
+
+    &__cross {
+        top: 20px;
+        right: 20px;
+    }
+
+    &__cross::after,
+    &__cross::before {
+        background-color: var(--main-color);
+    }
+
+    &__header {
+        border-bottom: 1px solid var(--decorative-line-color);
+        padding: 32px 32px 24px;
+    }
+
+    &__benefits {
+        display: flex;
+        font-size: 12px;
+        gap: 16px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+    }
+
+    &__benefits_item {
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        cursor: pointer;
+        flex-grow: 1;
+        flex-shrink: 0;
+        padding: 16px;
+        text-align: center;
+        transition: all ease var(--transition-time);
+    }
+
+    &__title {
+        font-size: 32px;
+        line-height: 48px;
+    }
+
+    &__content {
+        padding: 32px 32px 24px;
+    }
+
+    &__application {
+        display: flex;
+        column-gap: 30px;
+    }
+}
+
+.modal_credit_active {
+    opacity: 1;
+    z-index: 200;
+}
+
+.modal_credit_active .modal_credit__inner {
+    transform: translateX(0%);
+}
+
+@media (hover: hover) {
+    .modal_credit__benefits_item:hover {
+        scale: 1.05;
+        text-shadow: 0.1px 0.1px 0.1px var(--main-color);
+    }
+}
+
+@media (max-width: 1200px) {
+    .modal_credit {
+        &__inner {
+            width: 100%;
+        }
+
+        &__card_car {
+            width: 100%;
+            max-width: 500px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .modal_credit {
+        &__application {
+            display: flex;
+            flex-direction: column;
+            row-gap: 40px;
+        }
+
+        &__card_car {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &__card_car img {
+            height: 300px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .modal_credit__card_car img {
+        object-position: 30%;
+    }
+}
+
+@media (max-width: 400px) {
+    .modal_credit {
+        &__header {
+            padding: 45px 10px 24px;
+        }
+
+        &__content {
+            padding: 10px;
+        }
+    }
+}

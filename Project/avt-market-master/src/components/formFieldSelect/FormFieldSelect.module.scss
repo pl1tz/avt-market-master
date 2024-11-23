@@ -1,0 +1,50 @@
+.form_field_select {
+    cursor: pointer;
+    position: relative;
+
+    &__input {
+        background-color: transparent;
+        border-radius: 40px;
+        border: 1px solid var(--decorative-line-color);
+        color: var(--main-text-color);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        outline: none;
+        padding: 11px 16px;
+        text-align: left;
+        transition: border ease var(--transition-time);
+        width: 100%;
+    }
+
+    &__input::placeholder {
+        color: var(--light-text-color);
+    }
+
+    &__list {
+        left: 0;
+        max-height: 320px;
+        overflow-y: scroll;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: 5;
+    }
+
+    &__item {
+        background-color: var(--inverse-text-color);
+        font-size: 14px;
+        padding: 16px 12px;
+        transition: color ease var(--transition-time);
+    }
+
+    &__item + &__item {
+        border-top: 1px solid var(--decorative-line-color);
+    }
+}
+
+@media (hover: hover) {
+    .form_field_select__item:hover {
+        color: var(--main-text-color);
+    }
+}

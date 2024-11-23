@@ -1,0 +1,57 @@
+.installment {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    row-gap: 30px;
+
+    &__title {
+        font-size: 32px;
+        line-height: 48px;
+        margin-top: 50px;
+    }
+
+    &__content {
+        display: flex;
+        gap: 24px;
+    }
+
+    &__form {
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 360px;
+        width: 100%;
+        padding: 16px;
+    }
+
+    &__description {
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        padding: 16px;
+        height: max-content;
+    }
+
+    &__payment {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__banks_title {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .installment {
+        &__content {
+            flex-direction: column;
+        }
+
+        &__form {
+            max-width: 100%;
+        }
+    }
+}
