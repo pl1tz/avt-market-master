@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './CardAuto.module.scss';
 import { ButtonFavorite } from '../buttonFavorite/ButtonFavorite';
 import { formatPrice } from '../../helpers/formatPrice';
@@ -6,16 +6,28 @@ import { InStockSign } from '../inStockSign/InStockSign';
 import { getPayment } from '../../helpers/car/getPayment';
 import { ButtonCardOpenModal } from '../buttonCardOpenModal/ButtonCard';
 import { useCardAuto } from '../../hook/useCardAuto';
-//import { useSelector } from 'react-redux';
 import { getCountOwner } from '../../helpers/getCountOwner';
-// import { mediaQuerySelector } from '../../redux/selectors';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import type { AutoCard, ExtraCardAuto } from '../../interfaces/cars.interface';
 
 export const CardAuto = (props: AutoCard & ExtraCardAuto): React.JSX.Element => {
-    //const isMedium = useSelector(mediaQuerySelector).isMedium;
+    const [isMobile, setIsMobile] = useState<boolean>(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768); // Установите порог для мобильных устройств
+        };
+
+        handleResize(); // Установите начальное значение
+        window.addEventListener('resize', handleResize); // Добавьте обработчик события
+
+        return () => {
+            window.removeEventListener('resize', handleResize); // Удалите обработчик при размонтировании
+        };
+    }, []);
+
     const {
         year,
         model,
@@ -50,25 +62,35 @@ export const CardAuto = (props: AutoCard & ExtraCardAuto): React.JSX.Element => 
                 </header>
 
                 <div className={styles.card_auto__picture_container} onClick={handleImageClick}>
-                    <Swiper
-                        effect={'cards'}
-                        grabCursor={true}
-                        loop={true}
-                        modules={[EffectCards]}
-                        className={styles.slider_card}
-                    >
-                        {images.map((image, index) => (
-                            <SwiperSlide key={index} className={styles.card_auto__slider_item}>
-                                <img
-                                    className={`${styles.card_auto__slider_item} ${
-                                        currentImageIndex === index ? styles.card_auto__slider_item_active : ''
-                                    }`}
-                                    src={image.url}
-                                    alt={`${brand.name} ${year}`}
-                                />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                    {isMobile ? (
+                        // Десктопная версия
+                        <Swiper
+                            effect={'cards'}
+                            grabCursor={true}
+                            loop={true}
+                            modules={[EffectCards]}
+                            className={styles.slider_card}
+                        >
+                            {images.map((image, index) => (
+                                <SwiperSlide key={index} className={styles.card_auto__slider_item}>
+                                    <img
+                                        className={`${styles.card_auto__slider_item} ${
+                                            currentImageIndex === index ? styles.card_auto__slider_item_active : ''
+                                        }`}
+                                        src={image.url}
+                                        alt={`${brand.name} ${year}`}
+                                    />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    ) : (
+                        // Мобильная версия
+                        <img
+                            className={styles.card_auto__picture}
+                            src={images[currentImageIndex]?.url ? images[currentImageIndex].url : ''}
+                            alt={`${brand.name} ${year}`}
+                        />
+                    )}
                 </div>
 
                 <h3 className={styles.card_auto__name}>
