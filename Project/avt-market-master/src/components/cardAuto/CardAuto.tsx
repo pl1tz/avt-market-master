@@ -38,7 +38,7 @@ export const CardAuto = (props: AutoCard & ExtraCardAuto): React.JSX.Element => 
     const {
         currentImageIndex,
         isSelected,
-        handlers: { handleCardClick, handleCreditButtonClick },
+        handlers: { handleCardClick, handleCreditButtonClick, handleImageClick },
     } = useCardAuto({ car: props, inModalSelect });
 
     return (
@@ -49,7 +49,7 @@ export const CardAuto = (props: AutoCard & ExtraCardAuto): React.JSX.Element => 
                     {!inModalCredit && <ButtonFavorite car={props} />}
                 </header>
 
-                <div className={styles.card_auto__picture_container}>
+                <div className={styles.card_auto__picture_container} onClick={handleImageClick}>
                     <Swiper
                         effect={'cards'}
                         grabCursor={true}
