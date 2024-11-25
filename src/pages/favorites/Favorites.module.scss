@@ -1,0 +1,20 @@
+.favorites {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .favorites__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .favorites__list {
+        grid-template-columns: 1fr;
+    }
+}

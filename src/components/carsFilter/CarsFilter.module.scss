@@ -1,0 +1,28 @@
+.filter_cars {
+    gap: 16px;
+    min-height: 440px;
+    position: relative;
+}
+
+.vertical {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.horizontal {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (max-width: 1200px) {
+    .vertical {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 690px) {
+    .vertical {
+        grid-template-columns: 1fr;
+    }
+}

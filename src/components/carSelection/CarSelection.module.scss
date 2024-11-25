@@ -1,0 +1,120 @@
+.select {
+    box-shadow: var(--box-shadow);
+    padding: 16px;
+    min-height: 166px;
+
+    &__title {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+}
+
+.find_btn {
+    background-color: var(--main-color);
+    border-radius: 48px;
+    border: none;
+    color: var(--inverse-text-color);
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px;
+    position: relative;
+    transition: all ease var(--transition-time);
+    width: calc(33% - 7px);
+    z-index: 2;
+}
+
+.reset_btn {
+    align-self: center;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    color: var(--main-color);
+    font-size: 16px;
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    line-height: 24px;
+    position: relative;
+    margin-left: auto;
+    text-align: right;
+    transition: all ease var(--transition-time);
+    width: max-content;
+    z-index: 2;
+}
+
+.catalog_filter {
+    border-top: 1px solid var(--decorative-line-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px 0px;
+}
+
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 10px;
+}
+
+@media (hover: hover) {
+    .find_btn:hover {
+        background-color: var(--hover-main-color);
+    }
+
+    .reset_btn:hover {
+        color: var(--hover-main-color);
+    }
+}
+
+@media (max-width: 768px) {
+    .filter {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .find_btn {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+        width: 100%;
+    }
+
+    .reset_btn {
+        grid-column: 3 / 4;
+        grid-row: 5 / 6;
+        justify-content: end;
+        align-self: end;
+    }
+}
+
+@media (max-width: 550px) {
+    .filter {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .find_btn {
+        grid-column: 1 / 2;
+        grid-row: 7 / 8;
+    }
+
+    .reset_btn {
+        grid-column: 2 / 3;
+        grid-row: 7 / 8;
+    }
+}
+
+@media (max-width: 400px) {
+    .filter {
+        grid-template-columns: 1fr;
+    }
+
+    .find_btn {
+        grid-column: 1 / -1;
+        grid-row: 11 / 12;
+    }
+
+    .reset_btn {
+        grid-column: 1 / -1;
+        grid-row: 11 / 12;
+    }
+}

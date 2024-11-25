@@ -1,0 +1,27 @@
+.call_box {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+
+    &__link {
+        color: var(--light-text-color);
+        transition: all var(--transition-time);
+        padding: 0;
+    }
+
+    &__button {
+        color: var(--main-color);
+        background-color: transparent;
+        transition: all var(--transition-time);
+    }
+}
+
+@media (hover: hover) {
+    .call_box__link:hover {
+        text-shadow: 0.1px 0.1px 0.1px var(--light-text-color);
+    }
+
+    .call_box__button:hover {
+        color: var(--hover-main-color);
+    }
+}

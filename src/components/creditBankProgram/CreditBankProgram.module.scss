@@ -1,0 +1,32 @@
+.bank_program {
+    align-items: center;
+    border-top: 1px solid rgb(82, 99, 125);
+    display: grid;
+    grid-template-columns: 275.188px 135.594px 135.594px 135.594px;
+    padding: 16px 12px;
+    width: 100%;
+
+    &__name {
+        font-weight: 800;
+    }
+
+    &__rate {
+        font-weight: 800;
+    }
+
+    &__btn {
+        background-color: var(--inverse-text-color);
+        border-radius: 48px;
+        color: var(--main-text-color);
+        display: block;
+        text-align: center;
+        transition: all ease var(--transition-time);
+        padding: 12px;
+    }
+}
+
+@media (hover: hover) {
+    .bank_program__btn:hover {
+        text-shadow: 0.1px 0.1px 0.1px var(--main-text-color);
+    }
+}

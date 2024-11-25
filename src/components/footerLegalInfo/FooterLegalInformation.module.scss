@@ -1,0 +1,33 @@
+.footer_legal_info {
+    font-size: 12px;
+    line-height: 24px;
+    padding: 28px 0px;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 6px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer_legal_info {
+        font-size: 16px;
+
+        &__list {
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer_legal_info__list {
+        font-size: 14px;
+    }
+}

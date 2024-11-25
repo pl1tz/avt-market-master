@@ -1,0 +1,16 @@
+.credit_about {
+    box-shadow: var(--box-shadow);
+    padding: 16px;
+    width: 100%;
+
+    &__title {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+}

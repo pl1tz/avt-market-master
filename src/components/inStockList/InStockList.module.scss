@@ -1,0 +1,106 @@
+.in_stock {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0px 16px;
+        margin-bottom: 20px;
+    }
+
+    &__item {
+        align-items: center;
+        border-radius: 24px;
+        border: 1px solid var(--decorative-line-color);
+        display: flex;
+        gap: 4px;
+        justify-content: flex-start;
+        margin-bottom: 16px;
+        padding: 8px 16px;
+        position: relative;
+        transition: border ease var(--transition-time);
+    }
+
+    &__name {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 80%;
+        overflow: hidden;
+    }
+
+    &__link {
+        position: absolute;
+        inset: 0;
+    }
+
+    &__count {
+        color: var(--main-color);
+    }
+
+    &__btn_more {
+        background-color: transparent;
+        border: none;
+        color: var(--main-color);
+        display: block;
+        margin-left: auto;
+        cursor: pointer;
+        font-size: 16px;
+        justify-self: flex-end;
+        line-height: 24px;
+        outline: none;
+        padding: 12px;
+        transition: text-shadow ease var(--transition-time);
+        width: max-content;
+    }
+
+    &__arrow_icon {
+        transition: all var(--transition-time);
+    }
+}
+
+@media (hover: hover) {
+    .in_stock__item:hover {
+        border: 1px solid var(--main-color);
+    }
+
+    .in_stock__btn_more:hover {
+        text-shadow: 0.1px 0.1px 0.1px var(--main-color);
+    }
+
+    .in_stock__btn_more:hover .in_stock__arrow_icon {
+        color: var(--hover-main-color);
+    }
+}
+
+@media (max-width: 1200px) {
+    .in_stock__list {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .in_stock__list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .in_stock__list {
+        gap: 8px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .in_stock__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .in_stock__item {
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 500px) {
+    .in_stock__list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

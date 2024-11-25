@@ -1,0 +1,236 @@
+.slider_wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.slider_card {
+    border-radius: 20px;
+    height: 500px;
+    overflow: hidden;
+    width: 99% !important;
+
+    &__item {
+        border-radius: 20px;
+        position: relative;
+        z-index: 4;
+    }
+
+    &__item img {
+        border-radius: 20px;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+.slider_horizontal {
+    display: flex;
+
+    &__item_img {
+        border-radius: 20px;
+        cursor: pointer;
+        height: 80px;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+.box_vector {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 0 10px;
+    pointer-events: none;
+    z-index: 1;
+
+    &__vector {
+        pointer-events: auto;
+        align-items: center;
+        background-color: var(--main-color);
+        border-radius: 50%;
+        color: var(--inverse-text-color);
+        display: flex;
+        font-size: 20px;
+        font-weight: 900;
+        height: 48px;
+        justify-content: center;
+        transition: background-color var(--transition-time);
+        width: 48px;
+        z-index: 25;
+    }
+}
+
+.active {
+    opacity: 1;
+    scale: 2;
+}
+
+@media (max-width: 1200px) {
+    .slider_card {
+        &__item img {
+            object-position: 50% 80%;
+        }
+    }
+
+    .box_vector {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .box_vector {
+        display: none;
+    }
+    .slider_wrapper {
+        position: relative;
+        left: -3px;
+    }
+
+    .slider_horizontal__item img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 700px) {
+    .slider_card {
+        height: 400px;
+        &__item {
+            object-position: center;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .slider_horizontal {
+        display: none !important;
+    }
+
+    .slider_card {
+        height: 330px;
+    }
+}
+
+@media (max-width: 450px) {
+    .slider_card {
+        height: 250px;
+    }
+}
+
+@media (max-width: 350px) {
+    .slider_card {
+        height: 200px;
+    }
+}
+
+.preview_root {
+    :global {
+        .ant-image-preview-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ant-image-preview-body {
+            position: relative;
+            width: 80%; // Ширина контейнера с изображением
+            max-width: 1200px;
+            height: 80vh; // Высота контейнера
+            max-height: 800px;
+        }
+
+        .ant-image-preview-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .ant-image-preview-mask {
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+    }
+}
+
+.preview_modal {
+    :global {
+        .ant-image-preview-operations {
+            display: none; // Скрываем стандартную панель управления
+        }
+    }
+}
+
+.preview_toolbar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 24px;
+    padding: 8px 16px;
+    display: flex;
+    gap: 16px;
+    z-index: 1001;
+
+    svg {
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #1890ff;
+        }
+
+        &[disabled] {
+            color: rgba(255, 255, 255, 0.25);
+            cursor: not-allowed;
+        }
+    }
+}
+
+.preview_counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+// Стили для нижнего слайдера в модальном окне
+:global {
+    .ant-image-preview-footer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        background: transparent;
+
+        .swiper-container {
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.65);
+        }
+
+        .swiper-slide {
+            opacity: 0.6;
+            transition: opacity 0.3s;
+
+            &-active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.slider_main_container {
+    position: relative;
+    width: 100%;
+}

@@ -1,0 +1,11 @@
+.car_price {
+    &__full {
+        color: var(--main-text-color);
+        font-size: 20px;
+    }
+
+    &__month {
+        color: var(--light-text-color);
+        font-size: 12px;
+    }
+}

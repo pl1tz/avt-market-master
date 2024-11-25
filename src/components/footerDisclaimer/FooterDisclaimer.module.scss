@@ -1,0 +1,14 @@
+.footer_disclaimer {
+    font-size: 14px;
+    row-gap: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 0px;
+
+    & img {
+        height: 24px;
+        opacity: 0.4;
+        vertical-align: bottom;
+        width: 67px;
+    }
+}

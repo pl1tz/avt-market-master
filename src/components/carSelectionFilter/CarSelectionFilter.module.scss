@@ -1,0 +1,78 @@
+.select_filter {
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid var(--decorative-line-color);
+    cursor: pointer;
+    height: 48px;
+    padding: 11px;
+    position: relative;
+    transition: all ease var(--transition-time);
+    width: calc(16% - 6.2px);
+
+    &__header {
+        position: absolute;
+        inset: 0;
+        left: 8px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    & span {
+        display: block;
+        max-width: 85%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__list {
+        background-color: var(--inverse-text-color);
+        border: 1px solid var(--decorative-line-color);
+        font-weight: 400;
+        left: 0;
+        position: absolute;
+        top: calc(100% + 0.5px);
+        max-height: 250px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 100%;
+        z-index: 100;
+    }
+
+    &__item {
+        cursor: pointer;
+        padding: 8px;
+    }
+}
+
+.select_filter .vector {
+    left: 90%;
+
+    &::before,
+    &::after {
+        background-color: var(--main-color);
+    }
+}
+
+@media (hover: hover) {
+    .select_filter:hover {
+        border: 1px solid var(--main-color);
+    }
+
+    .select_filter__item:hover {
+        background-color: var(--decorative-line-color);
+    }
+}
+
+@media (max-width: 1200px) {
+    .select_filter {
+        flex-grow: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .select_filter {
+        width: 100%;
+    }
+}

@@ -1,0 +1,36 @@
+.footer_information {
+    font-size: 14px;
+    padding: 28px 0px;
+
+    &__list {
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 16px;
+    }
+
+    &__list li:nth-child(1) {
+        margin-right: auto;
+    }
+
+    &__item a {
+        display: block;
+        transition: color var(--transition-time);
+    }
+}
+
+@media (hover: hover) {
+    .footer_information__item:hover a {
+        color: var(--main-text-color);
+    }
+}
+
+@media (max-width: 650px) {
+    .footer_information {
+        font-size: 16px;
+
+        &__list {
+            flex-direction: column-reverse;
+            row-gap: 6px;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.latest_arrivals {
+    margin-bottom: 40px;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-size: 28px;
+        margin-bottom: 35px;
+    }
+
+    &__link {
+        display: block;
+        margin-left: auto;
+        color: var(--main-color);
+        transition: color ease var(--transition-time);
+    }
+}
+
+@media (hover: hover) {
+    .latest_arrivals__link:hover {
+        color: var(--hover-main-color);
+    }
+}

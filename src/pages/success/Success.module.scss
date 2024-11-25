@@ -1,0 +1,18 @@
+.success {
+    margin-bottom: 50px;
+
+    &__subtitle {
+        color: var(--light-text-color);
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &__description {
+        box-shadow: var(--box-shadow);
+        display: flex;
+        flex-direction: column;
+        max-width: 60%;
+        padding: 16px;
+        row-gap: 16px;
+    }
+}

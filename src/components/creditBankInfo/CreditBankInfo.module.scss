@@ -1,0 +1,56 @@
+.bank_info {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 274.391px 137.188px 205.797px 68.5938px;
+    padding: 12px;
+    position: relative;
+    width: 100%;
+
+    &__bank {
+        align-items: center;
+        column-gap: 20px;
+        display: flex;
+        flex-grow: 1;
+        row-gap: 4px;
+    }
+
+    &__img {
+        background-color: var(--inverse-text-color);
+        border-radius: 50%;
+        object-fit: contain;
+        display: block;
+        height: 90px;
+        padding: 5px;
+        width: 90px;
+    }
+
+    &__name {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+    }
+
+    &__name h4 {
+        font-weight: bold;
+    }
+
+    &__rate {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        row-gap: 4px;
+    }
+
+    &__rate h5 {
+        font-weight: 800;
+    }
+
+    &__payment {
+        flex-grow: 1;
+        row-gap: 4px;
+    }
+
+    &__payment h5 {
+        font-weight: 800;
+    }
+}

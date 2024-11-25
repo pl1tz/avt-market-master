@@ -1,0 +1,12 @@
+.banks {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    &__title {
+        font-size: 32px;
+        line-height: 48px;
+        margin-top: 50px;
+    }
+}

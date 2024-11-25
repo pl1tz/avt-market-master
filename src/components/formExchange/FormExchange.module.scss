@@ -1,0 +1,36 @@
+.exchange {
+    &__form {
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 360px;
+        width: 100%;
+        padding: 16px;
+    }
+
+    &__extra_fields {
+        transition: all ease 0.5s;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    &__description {
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        padding: 16px;
+        height: max-content;
+    }
+
+    &__payment {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 768px) {
+    .exchange__form {
+        max-width: 100%;
+    }
+}

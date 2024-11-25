@@ -1,0 +1,22 @@
+.form_credit {
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 360px;
+    width: 100%;
+    padding: 16px;
+
+    &__payment {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1200px) {
+    .form_credit {
+        max-width: 100%;
+        flex-grow: 1;
+    }
+}
